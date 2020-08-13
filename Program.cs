@@ -58,7 +58,10 @@ namespace Collection
         {
             bool isExist = dic.Any(d => d.Key == "scuba" && d.Value == 6);
             if (isExist) {
-                dic.Add("Empire", 6);
+                if (!dic.ContainsKey("Empire"))
+                {
+                    dic.Add("Empire", 6);
+                }
             }
         }
 
@@ -77,6 +80,9 @@ namespace Collection
                 {
                     dateTimes.Push(headDateTime);
                 }
+            }
+            else {
+                Console.WriteLine("The stuck is empty");
             }
         }
     }
